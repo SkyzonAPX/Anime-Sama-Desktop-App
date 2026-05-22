@@ -38,7 +38,7 @@ Pour exécuter ou compiler ce projet, vous devez avoir installé sur votre machi
 
 1. **Cloner le dépôt :**
 ```bash
-git clone [https://github.com/SkyzonAPX/Anime-Sama-Desktop-App.git](https://github.com/SkyzonAPX/Anime-Sama-Desktop-App.git)
+git clone https://github.com/SkyzonAPX/Anime-Sama-Desktop-App.git
 cd Anime-Sama-Desktop-App
 ```
 
