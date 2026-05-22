@@ -1,15 +1,15 @@
 {
-  "name": "projet-anime-sama",
+  "name": "anime-sama-desktop-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Anime Sama Desktop est une application légère et optimisée qui transforme le site de streaming Anime Sama en une véritable application de bureau.",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder"
   },
   "build": {
-    "appId": "com.alexb.animesama",
-    "productName": "Anime Sama",
+    "appId": "com.skyzonapx.animesama",
+    "productName": "Anime Sama Desktop",
     "directories": {
       "output": "dist"
     },
