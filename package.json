@@ -4,14 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.alexb.animesama",
+    "productName": "Anime Sama",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
   },
   "keywords": [],
   "author": "skyzonapx",
-  "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "electron": "^42.2.0"
+    "electron": "^42.2.0",
+    "electron-builder": "^26.8.1"
   },
   "dependencies": {
     "@ghostery/adblocker-electron": "^2.17.3",
