@@ -30,7 +30,7 @@ Pour exécuter ce projet, vous devez avoir installé :
 1.  **Cloner ou télécharger le projet :**
     Ouvrez votre terminal et placez-vous dans le dossier de votre choix.
     ```bash
-    git clone [https://github.com/VOTRE-PSEUDO/anime-sama-desktop.git](https://github.com/VOTRE-PSEUDO/anime-sama-desktop.git)
+    git clone [https://github.com/SkyzonAPX/Anime-Sama-Desktop-App.git](https://github.com/SkyzonAPX/Anime-Sama-Desktop-App.git)
     cd anime-sama-desktop
     ```
 
