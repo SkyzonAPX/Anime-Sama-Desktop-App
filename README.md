@@ -1,4 +1,4 @@
-# 🌸 Anime Sama Desktop
+# Anime Sama Desktop
 
 Une application de bureau fluide, optimisée et non officielle pour le site de streaming **Anime Sama**. 
 Développée avec [Electron](https://www.electronjs.org/), cette application offre une expérience de visionnage premium en supprimant les publicités, en contournant les blocages de domaine et en s'intégrant parfaitement à Discord.
