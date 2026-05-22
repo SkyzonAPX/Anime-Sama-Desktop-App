@@ -1,65 +1,91 @@
+```markdown
 # Anime Sama Desktop
 
-Une application de bureau fluide, optimisée et non officielle pour le site de streaming **Anime Sama**. 
-Développée avec [Electron](https://www.electronjs.org/), cette application offre une expérience de visionnage premium en supprimant les publicités, en contournant les blocages de domaine et en s'intégrant parfaitement à Discord.
+![Electron](https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Open Source](https://img.shields.io/badge/Open_Source-100000?style=for-the-badge&logo=github&logoColor=white)
+
+**Anime Sama Desktop** est une application de bureau légère, optimisée et non officielle pour le site de streaming d'animes et de scans *Anime Sama*. 
+
+Conçue pour offrir l'expérience de visionnage ultime, elle supprime les distractions, contourne automatiquement les blocages de fournisseurs d'accès (FAI) et s'intègre parfaitement à votre statut Discord.
 
 ---
 
-## ✨ Fonctionnalités Principales
+## ✨ Fonctionnalités
 
-* **🎮 Discord Rich Presence Ultra-Complet :** * Détection automatique de l'anime, de la saison et du numéro de l'épisode.
-    * Affichage de la langue (drapeau VO ou VF) et du temps de visionnage dynamique `[Actuel / Total]`.
-    * Icônes dynamiques selon les onglets visités (Catalogue, Planning, Profil, etc.).
-* **🛡️ Adblocker Intégré :** Moteur antipub propulsé par Ghostery bloquant nativement les bannières, les traqueurs et interdisant strictement l'ouverture de fenêtres pop-up par les lecteurs vidéo.
-* **🌐 Smart Domain Switcher :** Contournement automatique des blocages FAI. L'application teste silencieusement une liste de domaines miroirs au démarrage et se connecte au premier disponible en quelques secondes.
-* **⚙️ Paramètres Persistants :** Menu natif permettant d'activer/désactiver le RPC et l'Adblock à la volée. L'application mémorise vos choix et la taille de votre fenêtre d'une session à l'autre.
-* **🔌 Gestion des Crashs :** Interface de secours locale élégante en cas de perte de connexion ou de serveurs inaccessibles.
+* 🎮 **Discord Rich Presence (RPC) Avancé** * Détection automatique de l'anime, du film ou de la saison regardée.
+  * Récupération précise du numéro de l'épisode et de la langue (drapeaux VO/VF).
+  * Affichage dynamique de la progression de l'épisode `[Temps actuel / Temps total]`.
+  * Changement de statut intelligent selon les onglets visités (Catalogue, Planning, Profil...).
+* 🛡️ **Adblocker Natif & Anti-Popups** * Bloqueur de publicités intégré (propulsé par les listes Ghostery) agissant directement sur les requêtes réseau.
+  * Interdiction stricte d'ouverture de nouvelles fenêtres (les faux clics sur les lecteurs vidéo sont neutralisés).
+* 🌐 **Smart Domain Switcher (Anti-Censure)** * L'application teste silencieusement une liste de miroirs connus au démarrage (`.fr`, `.to`, `.vc`, etc.). 
+  * Elle se connecte automatiquement au premier domaine fonctionnel, rendant les blocages DNS obsolètes.
+* ⚙️ **Paramètres & Persistance** * Menu système natif permettant de désactiver le RPC ou l'Adblock à la volée.
+  * Sauvegarde locale des préférences utilisateur et de la taille de la fenêtre.
+* 🔌 **Gestion des Crashs** * Interface locale de secours élégante en cas de perte de connexion réseau ou d'indisponibilité des serveurs.
 
 ---
 
 ## 🛠️ Prérequis
 
-Pour exécuter ce projet, vous devez avoir installé :
+Pour exécuter ou compiler ce projet, vous devez avoir installé sur votre machine :
 * [Node.js](https://nodejs.org/) (version 16 ou supérieure recommandée)
-* NPM (inclus avec Node.js)
+* Git
 
 ---
 
-## 🚀 Installation
+## 🚀 Installation & Utilisation
 
-1.  **Cloner ou télécharger le projet :**
-    Ouvrez votre terminal et placez-vous dans le dossier de votre choix.
-    ```bash
-    git clone [https://github.com/SkyzonAPX/Anime-Sama-Desktop-App.git](https://github.com/SkyzonAPX/Anime-Sama-Desktop-App.git)
-    cd anime-sama-desktop
-    ```
+1. **Cloner le dépôt :**
+   ```bash
+   git clone [https://github.com/SkyzonAPX/Anime-Sama-Desktop-App.git](https://github.com/SkyzonAPX/Anime-Sama-Desktop-App.git)
+   cd Anime-Sama-Desktop-App
 
-2.  **Installer les dépendances :**
-    ```bash
-    npm install
-    ```
+```
 
-3.  **Configuration Discord (Optionnel) :**
-    Si vous souhaitez utiliser votre propre application Discord pour le statut :
-    * Créez une application sur le [Discord Developer Portal](https://discord.com/developers/applications).
-    * Récupérez votre **Application ID**.
-    * Ouvrez le fichier `package.json` et remplacez la valeur `"clientId"` par le vôtre.
-    * Uploadez les icones du dossier assets (logo, catalog, help, vf, vo, etc.) dans l'onglet *Rich Presence > Art Assets* de votre portail développeur.
+2. **Installer les dépendances :**
+```bash
+npm install
 
----
+```
 
-## 💻 Utilisation
 
-Pour lancer l'application, exécutez simplement :
-
+3. **Lancer l'application (Mode Développement) :**
 ```bash
 npm start
 
 ```
 
-### ⚙️ Le Menu "Settings"
 
-Une fois l'application lancée, un menu système est disponible en haut à gauche de la fenêtre. Il vous permet de :
 
-* **Activer/Désactiver le Discord RPC** (mise à jour instantanée).
-* **Activer/Désactiver l'AdBlock** (nécessite un rechargement de la page pour prendre effet sur les scripts déjà chargés).
+---
+
+## ⚙️ Configuration (`package.json`)
+
+Toute la configuration critique de l'application est centralisée dans le bloc `appConfig` du fichier `package.json`. Vous n'avez pas besoin de toucher au code JavaScript pour mettre à jour le site :
+
+```json
+  "appConfig": {
+    "urls": [
+      "[https://anime-sama.fr/](https://anime-sama.fr/)",
+      "[https://anime-sama.to/](https://anime-sama.to/)",
+      "[https://anime-sama.org/](https://anime-sama.org/)"
+    ],
+    "clientId": "VOTRE_ID_DISCORD_ICI"
+  }
+
+```
+
+* **`urls`** : L'ordre est important. L'application tentera de se connecter au premier lien, puis au second en cas d'échec, etc.
+* **`clientId`** : Votre ID d'application Discord (généré sur le portail développeur Discord) pour que le Rich Presence affiche vos propres icônes (`logo`, `vf`, `vo`, `catalog`, etc.).
+
+---
+
+## 📦 Compiler l'application (Build)
+
+Pour générer un exécutable `.exe` prêt à être installé et distribué (avec icône et raccourcis de bureau) :
+
+```bash
+npm run build
+```
