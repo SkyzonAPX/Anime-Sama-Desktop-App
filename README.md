@@ -66,9 +66,9 @@ Toute la configuration critique de l'application est centralisée dans le bloc `
 ```json
   "appConfig": {
     "urls": [
-      "[https://anime-sama.fr/](https://anime-sama.fr/)",
-      "[https://anime-sama.to/](https://anime-sama.to/)",
-      "[https://anime-sama.org/](https://anime-sama.org/)"
+      "https://anime-sama.fr/",
+      "https://anime-sama.to/",
+      "https://anime-sama.org/"
     ],
     "clientId": "VOTRE_ID_DISCORD_ICI"
   }
