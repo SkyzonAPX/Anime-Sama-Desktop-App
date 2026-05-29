@@ -4,64 +4,68 @@
 ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![Open Source](https://img.shields.io/badge/Open_Source-100000?style=for-the-badge&logo=github&logoColor=white)
 
-**Anime Sama Desktop** est une application de bureau légère, optimisée et non officielle pour le site de streaming d'animes et de scans *Anime Sama*. 
+**Anime Sama Desktop** is a lightweight, optimized, and unofficial desktop application for the *Anime Sama* streaming and manga reading website.
 
-Conçue pour offrir l'expérience de visionnage ultime, elle supprime les distractions, contourne automatiquement les blocages de fournisseurs d'accès (FAI) et s'intègre parfaitement à votre statut Discord.
-
----
-
-## ✨ Fonctionnalités
-
-* 🎮 **Discord Rich Presence (RPC) Avancé** * Détection automatique de l'anime, du film ou de la saison regardée.
-  * Récupération précise du numéro de l'épisode et de la langue (drapeaux VO/VF).
-  * Affichage dynamique de la progression de l'épisode `[Temps actuel / Temps total]`.
-  * Changement de statut intelligent selon les onglets visités (Catalogue, Planning, Profil...).
-* 🛡️ **Adblocker Natif & Anti-Popups** * Bloqueur de publicités intégré (propulsé par les listes Ghostery) agissant directement sur les requêtes réseau.
-  * Interdiction stricte d'ouverture de nouvelles fenêtres (les faux clics sur les lecteurs vidéo sont neutralisés).
-* 🌐 **Smart Domain Switcher (Anti-Censure)** * L'application teste silencieusement une liste de miroirs connus au démarrage (`.fr`, `.to`, `.vc`, etc.). 
-  * Elle se connecte automatiquement au premier domaine fonctionnel, rendant les blocages DNS obsolètes.
-* ⚙️ **Paramètres & Persistance** * Menu système natif permettant de désactiver le RPC ou l'Adblock à la volée.
-  * Sauvegarde locale des préférences utilisateur et de la taille de la fenêtre.
-* 🔌 **Gestion des Crashs** * Interface locale de secours élégante en cas de perte de connexion réseau ou d'indisponibilité des serveurs.
+Designed to provide the ultimate viewing experience, it removes distractions, automatically bypasses ISP (Internet Service Provider) blocks, and seamlessly integrates with your Discord status.
 
 ---
 
-## 🛠️ Prérequis
+## ✨ Features & Improvements
 
-Pour exécuter ou compiler ce projet, vous devez avoir installé sur votre machine :
-* [Node.js](https://nodejs.org/) (version 16 ou supérieure recommandée)
+* 🎮 **Advanced & Secure Discord Rich Presence (RPC)** 
+  * Automatic detection of the anime, movie, or season being watched.
+  * Accurate retrieval of the episode number and language (VO/VF flags).
+  * Secure extraction of video timestamps from cross-origin iframes.
+  * Dynamic display of episode progress `[Current Time / Total Time]`.
+  * Smart status changes based on visited tabs (Catalog, Schedule, Profile...).
+* 🛡️ **Native Adblocker & Anti-Popups** 
+  * Built-in ad blocker (powered by Ghostery lists) acting directly on network requests.
+  * Strict prohibition of opening new windows (fake clicks on video players are neutralized).
+* 🌐 **Smart Domain Switcher & Cloudflare Support** 
+  * The app silently tests a list of known mirrors on startup (`.fr`, `.to`, `.org`, etc.). 
+  * Fast and reliable detection system that supports Cloudflare checks (HTTP 403).
+  * Automatic connection to the first working domain, making DNS blocks obsolete.
+* ⚙️ **Settings & Persistence** 
+  * Native system menu allowing you to toggle RPC or Adblock on the fly.
+  * Local saving of user preferences and window size.
+* 🔌 **Stability & Crash Management** 
+  * **Auto-recovery**: Silent recovery logic that automatically reloads the app if the render process crashes.
+  * Resolution of fatal IPC crashes related to Web security (site isolation maintained).
+  * Elegant local fallback interface in case of network connection loss.
+
+---
+
+## 🛠️ Prerequisites
+
+To run or build this project, you need to have the following installed on your machine:
+* [Node.js](https://nodejs.org/) (version 16 or higher recommended)
 * Git
 
 ---
 
-## 🚀 Installation & Utilisation
+## 🚀 Installation & Usage
 
-1. **Cloner le dépôt :**
+1. **Clone the repository:**
 ```bash
 git clone https://github.com/SkyzonAPX/Anime-Sama-Desktop-App.git
 cd Anime-Sama-Desktop-App
 ```
 
-2. **Installer les dépendances :**
+2. **Install dependencies:**
 ```bash
 npm install
-
 ```
 
-
-3. **Lancer l'application (Mode Développement) :**
+3. **Start the application (Development Mode):**
 ```bash
 npm start
-
 ```
-
-
 
 ---
 
 ## ⚙️ Configuration (`package.json`)
 
-Toute la configuration critique de l'application est centralisée dans le bloc `appConfig` du fichier `package.json`. Vous n'avez pas besoin de toucher au code JavaScript pour mettre à jour le site :
+All critical application configuration is centralized in the `appConfig` block of the `package.json` file. You do not need to touch the JavaScript code to update the site:
 
 ```json
   "appConfig": {
@@ -70,19 +74,18 @@ Toute la configuration critique de l'application est centralisée dans le bloc `
       "https://anime-sama.to/",
       "https://anime-sama.org/"
     ],
-    "clientId": "VOTRE_ID_DISCORD_ICI"
+    "clientId": "YOUR_DISCORD_ID_HERE"
   }
-
 ```
 
-* **`urls`** : L'ordre est important. L'application tentera de se connecter au premier lien, puis au second en cas d'échec, etc.
-* **`clientId`** : Votre ID d'application Discord (généré sur le portail développeur Discord) pour que le Rich Presence affiche vos propres icônes (`logo`, `vf`, `vo`, `catalog`, etc.).
+* **`urls`**: The order is important. The app will attempt to connect to the first link, then the second if it fails, and so on.
+* **`clientId`**: Your Discord application ID (generated on the Discord Developer Portal) so that the Rich Presence displays your own icons (`logo`, `vf`, `vo`, `catalog`, etc.).
 
 ---
 
-## 📦 Compiler l'application (Build)
+## 📦 Build the Application
 
-Pour générer un exécutable `.exe` prêt à être installé et distribué (avec icône et raccourcis de bureau) :
+To generate a ready-to-install `.exe` executable (with icon and desktop shortcuts):
 
 ```bash
 npm run build
