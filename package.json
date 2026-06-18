@@ -1,11 +1,12 @@
 {
   "name": "anime-sama-desktop-app",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Anime Sama Desktop est une application légère et optimisée qui transforme le site de streaming Anime Sama en une véritable application de bureau.",
-  "main": "index.js",
+  "main": "src/main/index.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder"
+    "build": "electron-builder",
+    "release": "electron-builder --publish always"
   },
   "build": {
     "appId": "com.skyzonapx.animesama",
@@ -13,6 +14,11 @@
     "directories": {
       "output": "dist"
     },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
     "win": {
       "target": "nsis",
       "icon": "build/icon.ico"
@@ -21,6 +27,11 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "SkyzonAPX",
+      "repo": "Anime-Sama-Desktop-App"
     }
   },
   "keywords": [],
@@ -33,7 +44,8 @@
   "dependencies": {
     "@ghostery/adblocker-electron": "^2.17.3",
     "cross-fetch": "^4.1.0",
-    "discord-rpc": "^4.0.1"
+    "discord-rpc": "^4.0.1",
+    "electron-updater": "^6.3.9"
   },
   "appConfig": {
     "urls": [
@@ -41,6 +53,7 @@
       "https://anime-sama.to/",
       "https://anime-sama.org/"
     ],
-    "clientId": "123456789012345678"
-  }
+    "clientId": "YOUR_DISCORD_ID_HERE"
+  },
+  "license": "ISC"
 }

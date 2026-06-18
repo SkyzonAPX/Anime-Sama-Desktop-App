@@ -2,66 +2,28 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erreur de connexion</title>
+    <title>Connexion perdue</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
             height: 100vh;
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            background: #15171c;
+            color: #e8e9ec;
+            font-family: 'Segoe UI', sans-serif;
             text-align: center;
         }
-        .container {
-            max-width: 600px;
-            padding: 40px;
-            background-color: #1e1e1e;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid #333;
-        }
-        h1 {
-            color: #ff4757;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #a4b0be;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        .icon {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
-        .btn {
-            background-color: #ff4757;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-decoration: none;
-        }
-        .btn:hover {
-            background-color: #ff6b81;
-        }
+        h1 { font-size: 22px; margin-bottom: 8px; }
+        p { color: #8b8f9a; font-size: 14px; }
+        .accent { color: #ff5c4d; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="icon">🔌</div>
-        <h1>Perdu dans les limbes</h1>
-        <p>Impossible de joindre Anime Sama. Vérifie ta connexion internet ou assure-toi que les noms de domaine dans ton fichier de configuration sont à jour.</p>
-        <button class="btn" onclick="window.close()">Fermer l'application</button>
-    </div>
+    <h1>Connexion <span class="accent">perdue</span></h1>
+    <p>Aucun domaine Anime Sama n'a répondu. Vérifiez votre connexion internet.</p>
+    <p>L'application retentera automatiquement de se connecter.</p>
 </body>
 </html>
